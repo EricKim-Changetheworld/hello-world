@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소수 찾기</title>
+</head>
+<body>
+    <script>
+        <h1>1 - 10000 사이의 소수를 화면에 출력하는 프로그램을 작성해 봅시다.</h1>
+        // 1~10000 사이의 소수를 화면에 출력
+        // ㄴ 소수판별.
+        // ㄴ 필터된 소수를 화면에 출력.
+
+        var numbers = {};
+        numbers.all = [];
+        numbers.prime = [];
+
+        // 소수인지 아닌지 판별 
+        numbers.isprime = function(number) {
+            for (var i = 2; i < number; i++) {
+                if (number % i === 0)
+                return false;
+                }
+                return true;
+            };
+
+        // 구하고자 하는 숫자를 대입
+        numbers.addAllNumber = function(max_num) {
+            for (var i = 2; i <= max_num; i++) {
+                this.all.push(i);
+            }
+        };
+
+        // primes이면 소수 프린트; 왜 length를 구해야하지 ?  /all은 왜 붙이는거지
+        numbers.calcprimes = function() {
+            for (var i = 0; i < this.all.length; i++) {
+                var n = this.all[i];
+                if (this.isPrime(n)) {
+                    this.prime.push(n);
+                }
+            }
+        };
+        
+        // ..?? 
+        numbers.getAllPrimeNumbers = function() {
+            var ret = "";
+            ret += "<h2>전체 소수의 갯수" + this.prime.length + "</h2>\n";
+            for (var i=0; i < this.prime.length; i++) {
+                ret += (i+1) + "번째 소수: " + this.prime[i] + "<br>\n";
+            }
+            return ret;
+            };
+
+        numbers.addAllNumber(10000);
+        numbers.calcPrimes();
+        document.getElementById('result').innerHTML = numbers.getAllPrimeNumbers();
+
+     </script>
+</body>
