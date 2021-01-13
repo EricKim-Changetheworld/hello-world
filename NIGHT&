@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body> 
+        <h2><a href="index.html">WEB</a></h12>
+        <input type="button", value="성민꼬추" onclick="
+         document.querySelector('body').style.backgroundColor = 'black';
+         document.querySelector('body').style.color = 'white';
+        "> 
+        <input type="button", value="DAY">
+        <OL>
+            <li><a href="">HTML</a></li>
+            <li><a href="">CSS</a></li>
+            <li><a href="">JAVASRCIPT</a></li>
+        </OL>
+
+        <h2>JAVASRCIPT</h2>
+
+        <p>
+        JavaScript dza va skript  often abbreviated as JS is a high level dynamic weakly typed prototype based multi- paradigm and interpreted
+        </p>
+    </body>
+</html>
